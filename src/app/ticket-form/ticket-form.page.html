@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Compra de ticket</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="vertical-center">
+    <form (ngSubmit)="enviarFormulario()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="cliente.nombre" name="nombre" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input [(ngModel)]="cliente.apellido" name="apellido" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input type="number" [(ngModel)]="cliente.edad" name="edad" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Cantidad</ion-label>
+        <ion-input type="number" [(ngModel)]="cantidad" name="cantidad" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo de Entrada</ion-label>
+        <ion-select [(ngModel)]="tipoEntradaSeleccionado" name="tipoEntrada">
+          <ion-select-option *ngFor="let tipo of eventoSeleccionado.tipos" [value]="tipo">{{ tipo.tipo }} - {{ tipo.precio }} CLP</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="button-container">
+        <ion-button expand="full" type="submit">Comprar</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">&copy; 2024 Joa.mendoza</ion-title>
+  </ion-toolbar>
+</ion-footer>

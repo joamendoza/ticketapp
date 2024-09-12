@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="vertical-center">
+    <ion-list>
+      <ion-item *ngFor="let evento of eventos">
+        <ion-label>
+          <h2>{{ evento.nombre }}</h2>
+          <p *ngFor="let tipo of evento.tipos">{{ tipo.tipo }} - {{ tipo.precio }} CLP</p>
+        </ion-label>
+        <ion-button slot="end" (click)="seleccionarEvento(evento)">Ver Detalles</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">&copy; 2024 Joa.mendoza</ion-title>
+  </ion-toolbar>
+</ion-footer>
